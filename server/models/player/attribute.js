@@ -8,4 +8,8 @@ export class Attribute {
   get name(){ return this._name; };
   get value(){ return this._value; };
   get category(){ return this._category; };
+
+  set name(name){ this._name = name; };
+  set value(value){ this._value = value; };
+  set category(category){ this._category = category; };
 }

@@ -21,14 +21,16 @@
     "cors": "^2.7.1",
     "es6-request": "^2.0.1",
     "express": "^4.13.3",
+    "firebase": "^3.1.0",
     "moment": "^2.14.1",
     "randgen": "^0.1.0",
-    "resource-router-middleware": "^0.5.1"
+    "resource-router-middleware": "^0.5.1",
+    "vectors": "^0.1.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.9.0",
+    "babel-cli": "^6.10.1",
     "babel-core": "^6.9.0",
-    "nodemon": "^1.9.2",
-    "babel-preset-es2015": "^6.9.0"
+    "babel-preset-es2015": "^6.9.0",
+    "nodemon": "^1.9.2"
   }
 }
