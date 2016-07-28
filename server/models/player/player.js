@@ -21,7 +21,7 @@ export class Player {
     return new Promise(
       function(resolve, reject) {
         var playerArray = [];
-
+        console.log("GENERATE PLAYERS")
         //Generate random names with uinames api
         http.get("http://uinames.com/api/?gender=male&region="+region+"&amount="+num)
         .then((body) => {
@@ -42,9 +42,9 @@ export class Player {
             let attributes = Attributes.generateNewAttributes(age, weight, height);
 
             playerArray.push(new Player(person.name, person.surname, region, age, weight, height, attributes, teamId));
-
-            resolve(playerArray);
           }
+
+          resolve(playerArray);
         });
       }
     );

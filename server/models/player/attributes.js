@@ -58,18 +58,24 @@ export class Attributes {
   //Generate attributes for a new player
   static generateNewAttributes(playerAge, playerWeight, playerHeight) {
     let newAttrs = new Attributes();
-    let meanLength = new Vector([25, 25, 25, 25, 25, 25]).length(); // Mean length of total abilty for new player
+    let meanVector  = new Vector(25, 25, 25, 25, 25, 25);
+    console.log(meanVector);
+    let meanLength = meanVector.getLength(); // Mean length of total abilty for new player
 
     //Average abiltiy between 0-100 for each main attribute is generated
-    let mainAttributesAverage = new Vector([
+    let mainAttributesAverage = new Vector(
       Math.round(Math.random()*100 * 1e2) / 1e2, //Passing
       Math.round(Math.random()*100 * 1e2) / 1e2, //Shooting
       Math.round(Math.random()*100 * 1e2) / 1e2, //Defending
       Math.round(Math.random()*100 * 1e2) / 1e2, //Technique
       Math.round(Math.random()*100 * 1e2) / 1e2, //Physical
       Math.round(Math.random()*100 * 1e2) / 1e2  //Mental
-    ]);
+    );
+
+    console.log(mainAttributesAverage);
     mainAttributesAverage.normalize(parseFloat(randgen.rnorm(meanLength, 15))); //Normalize abilities for a new player and randomize with standard dev of 15
+
+
 
     //Age factor peaks at 28, descends quick after 28 and rises after 17
     let ageFactor = (playerAge < 28 ? (-0.004 * Math.pow(playerAge-28, 2) + 1) : (-0.007 * Math.pow(playerAge-28, 2) + 1));

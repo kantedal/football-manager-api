@@ -1,4 +1,4 @@
-import { Player } from './player/player'
+import { Player } from '../player/player'
 import moment from 'moment';
 
 export const TEAM_CREATIONS_ERRORS = {
@@ -17,10 +17,10 @@ export class Team {
     this._players = players;
   }
 
-  static createNewTeam(teamname, owner){
+  static createNewTeam(teamname, owner, teamid){
     return new Promise(
       function(resolve, reject) {
-        Player.generateRandomPlayers(START_TEAM_SIZE, 'Sweden', owner)
+        Player.generateRandomPlayers(START_TEAM_SIZE, 'Sweden', teamid)
           .then(function(players) {
             resolve(new Team(teamname, owner, players));
           });
@@ -32,6 +32,8 @@ export class Team {
     return {
       teamname: this._teamname,
       owner: this._owner,
+      formation: "",
+      tactic: {},
       createdAt: moment().format()
     }
   }
